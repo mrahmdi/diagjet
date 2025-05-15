@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiagJet - AMM Troubleshooting</title>
+  <style>
+    body { font-family: Arial; background: #eef3fa; padding: 20px; color: #003366; }
+    .card { background: #fff; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>DiagJet - Chapter 29 Example</h2>
+    <div id="step">Check HYD pump pressure level...</div>
+    <button onclick="nextStep(true)">Yes</button>
+    <button onclick="nextStep(false)">No</button>
+    <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+  </div>
+  <script>
+    function nextStep(answer) {
+      const step = document.getElementById('step');
+      const result = document.getElementById('result');
+      if (answer) {
+        step.innerText = "Verify fluid reservoir level...";
+        result.innerText = "Next Task: AMM 29-11-00-790-802";
+      } else {
+        step.innerText = "Inspect pump electrical connector...";
+        result.innerText = "Next Task: AMM 24-41-00-720-801";
+      }
+    }
+  </script>
+</body>
+</html>
